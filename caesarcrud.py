@@ -93,7 +93,7 @@ class CaesarCRUD:
             result = self.caesarsql.run_command(f"""SELECT {fieldstr} FROM {table} LIMIT {str(getamount)};""",self.caesarsql.fetch)
             if len(result) == 0:
                 return False
-            elif len(result) != 0 and type(result) == tuple:
+            elif len(result) != 0 and type(result) == list:
                 result = self.tuple_to_json(fields,result)
                 return result
             else:
